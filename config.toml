@@ -3,7 +3,7 @@ enable-module-update = true
 parallel-jobs = 1
 compression-level = 9
 
-patches-version = "dev"
+patches-version = "latest"
 cli-version = "latest"
 
 [YouTube-Morphe]
