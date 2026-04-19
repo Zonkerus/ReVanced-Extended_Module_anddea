@@ -1,64 +1,56 @@
-enable-module-update = true # set this to false if you do not want to receive updates for the module
+enable-module-update = true
+
 parallel-jobs = 1
+compression-level = 9
 
-# add 'enabled = false' for not patching a specific app or remove it from the config
-# see https://github.com/j-hc/revanced-magisk-module/blob/main/CONFIG.md for more detailed explanations
-
-# you can use rvmm-config-gen to generate a config
-
-[YouTube]
-build-mode = "both"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
-uptodown-dlurl = "https://youtube.en.uptodown.com/android"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
+patches-version = "latest"
+cli-version = "latest"
 
 [YouTube-Morphe]
-app-name = "YouTube"
-patches-source = "MorpheApp/morphe-patches"
+build-mode = "module"
+
+patches-source = "anddea/revanced-patches"
 cli-source = "MorpheApp/morphe-cli"
-rv-brand = "Morphe"
-build-mode = "both"
+
+included-patches = """\
+  'Bypass URL redirects' \
+  'Change live ring click action' \
+  'Description components' \
+  'Disable forced auto captions' \
+  'Disable resuming Miniplayer on startup' \
+  'Disable resuming Shorts on startup' \
+  'Disable sign in to TV popup' \
+  'Fullscreen components' \
+  'Hide action buttons' \
+  'Hide ads' \
+  'Hide comments components' \
+  'Hide feed components' \
+  'Hide feed flyout menu' \
+  'Hide layout components' \
+  'Hide player buttons' \
+  'Hide player flyout menu' \
+  'Miniplayer' \
+  'Navigation bar components' \
+  'Open links externally' \
+  'Overlay buttons' \
+  'Player components' \
+  'Remove background playback restrictions' \
+  'Remove viewer discretion dialog' \
+  'Sanitize sharing links' \
+  'Seekbar components' \
+  'Settings for YouTube' \
+  'Shorts components' \
+  'Snack bar components' \
+  'SponsorBlock' \
+  'Toolbar components' \
+  'Translations for YouTube' \
+  'Video playback' \
+  'Visual preferences icons for YouTube' \
+  """
+
+include-stock = true
+exclusive-patches = true
+
 apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube"
 uptodown-dlurl = "https://youtube.en.uptodown.com/android"
 archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.youtube"
-
-[Music]
-build-mode = "both"
-arch = "both"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
-uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
-
-[Music-Morphe]
-app-name = "Music"
-patches-source = "MorpheApp/morphe-patches"
-cli-source = "MorpheApp/morphe-cli"
-rv-brand = "Morphe"
-build-mode = "both"
-arch = "both"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/youtube-music"
-uptodown-dlurl = "https://youtube-music.en.uptodown.com/android"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.youtube.music"
-
-[Reddit-Morphe]
-app-name = "Reddit"
-rv-brand = "Morphe"
-build-mode = "both"
-patches-source = "MorpheApp/morphe-patches"
-cli-source = "MorpheApp/morphe-cli"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/redditinc/reddit/"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.reddit.frontpage"
-uptodown-dlurl = "https://reddit-official-app.en.uptodown.com/android"
-dpi = "120-640dpi"
-
-[GooglePhotos]
-build-mode = "both"
-arch = "both"
-apkmirror-dlurl = "https://www.apkmirror.com/apk/google-inc/photos/"
-uptodown-dlurl = "https://google-photos.en.uptodown.com/android"
-archive-dlurl = "https://archive.org/download/jhc-apks/apks/com.google.android.apps.photos"
-
-[Twitch]
-enabled = false
-apkmirror-dlurl = "https://www.apkmirror.com/apk/twitch-interactive-inc/twitch/"
-uptodown-dlurl = "https://twitch.en.uptodown.com/android"
